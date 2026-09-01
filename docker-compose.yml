@@ -20,20 +20,23 @@ services:
       - ALL
     cap_add:
       - CHOWN
+      - FOWNER
       - DAC_OVERRIDE
       - SETUID
       - SETGID
+      - SYS_CHROOT
+      - AUDIT_WRITE
       - NET_BIND_SERVICE
 
     security_opt:
       - no-new-privileges:false
 
     pids_limit: 512
-    cpus: 6
+    cpus: 8
     mem_limit: 12g
 
     tmpfs:
-      - /tmp
+      - /tmp:exec
 
     stdin_open: true
     tty: true
