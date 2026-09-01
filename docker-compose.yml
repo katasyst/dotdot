@@ -4,7 +4,7 @@ services:
     container_name: yuri
 
     ports:
-      - "127.0.0.1:69:69"
+      - "127.0.0.1:69:22"
 
     environment:
       - SSH_PUBKEY=${SSH_PUBKEY}
